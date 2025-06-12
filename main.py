@@ -12,12 +12,26 @@ from sound import *
 from pathfinding import *
 from minimap import Minimap
 
+import sys
+import os
+
+def resource_path(relative_path):
+    """ Връща абсолютния път до ресурс, работи за 개발 и за PyInstaller """
+    try:
+        # PyInstaller създава временна папка и съхранява пътя в _MEIPASS
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.abspath(".")
+
+    return os.path.join(base_path, relative_path)
+
 class Game:
     def __init__(self):
         pg.init()
         pg.mouse.set_visible(False)
         self.screen = pg.display.set_mode(RES)
         pg.event.set_grab(True)
+        self.resource_path = resource_path
         self.clock = pg.time.Clock()
         self.delta_time = 1
         self.global_trigger = False

@@ -6,11 +6,11 @@ class ObjectRenderer:
         self.game = game
         self.screen = game.screen
         self.wall_textures = self.load_wall_textures()
-        self.sky_image = self.get_texture('../ray-casting-pygame/resources/textures/sky.png', (WIDTH, HALF_HEIGHT))
+        self.sky_image = self.get_texture(self.game.resource_path('resources/textures/sky.png'), (WIDTH, HALF_HEIGHT))
         self.sky_offset = 0
-        self.blood_screen = self.get_texture('../ray-casting-pygame/resources/textures/blood_screen.png', RES)
-        self.game_over_image = self.get_texture('../ray-casting-pygame/resources/textures/game_over.png', RES)
-        self.win_image = self.get_texture('../ray-casting-pygame/resources/textures/win.png', RES)
+        self.blood_screen = self.get_texture(self.game.resource_path('resources/textures/blood_screen.png'), RES)
+        self.game_over_image = self.get_texture(self.game.resource_path('resources/textures/game_over.png'), RES)
+        self.win_image = self.get_texture(self.game.resource_path('resources/textures/win.png'), RES)
         self.font = pg.font.Font(None, 50)
 
     def draw(self):
@@ -50,5 +50,5 @@ class ObjectRenderer:
 
     def load_wall_textures(self):
         return {
-            1: self.get_texture('resources/textures/wall.png'),
+            1: self.get_texture(self.game.resource_path('resources/textures/wall.png')),
         }

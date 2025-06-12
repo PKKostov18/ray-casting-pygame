@@ -6,7 +6,7 @@ import pygame as pg
 class NPC(SpriteObject):
     def __init__(self, game, path='resources/sprites/npc/golem/0.png', pos=(10.5, 5.5),
                  scale=0.6, shift=0.2):
-        super().__init__(game, path, pos, scale, shift)
+        super().__init__(game, path=game.resource_path('resources/sprites/npc/golem/0.png'), pos=pos, scale=scale, shift=shift)
 
         self.attack_dist = 1.5
         self.speed = 0.03
