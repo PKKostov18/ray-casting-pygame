@@ -5,8 +5,6 @@ class Weapon(AnimatedSprite):
     def __init__(self, game, path='resources/sprites/weapon/shotgun/0.png', scale=0.6, animation_time=90):
         super().__init__(game=game, path=game.resource_path(path), scale=scale, animation_time=animation_time)
 
-        # Презаписваме анимацията, заредена от родителския клас.
-        # Оставяме само едно статично изображение (0.png).
         static_image_path = game.resource_path('resources/sprites/weapon/shotgun/0.png')
         single_image = pg.image.load(static_image_path).convert_alpha()
         scaled_image = pg.transform.smoothscale(

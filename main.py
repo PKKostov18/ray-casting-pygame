@@ -1,11 +1,7 @@
-import pygame as pg
-import sys
-from settings import *
 from map import *
 from player import *
 from raycasting import *
 from object_renderer import *
-from sprite_object import *
 from object_handler import *
 from weapon import *
 from sound import *
@@ -16,9 +12,7 @@ import sys
 import os
 
 def resource_path(relative_path):
-    """ Връща абсолютния път до ресурс, работи за 개발 и за PyInstaller """
     try:
-        # PyInstaller създава временна папка и съхранява пътя в _MEIPASS
         base_path = sys._MEIPASS
     except Exception:
         base_path = os.path.abspath(".")
@@ -48,7 +42,7 @@ class Game:
         self.weapon = Weapon(self)
         self.sound = Sound(self)
         self.pathfinding = PathFinding(self)
-        self.minimap = Minimap(self)  # <-- ДОБАВЕН РЕД
+        self.minimap = Minimap(self)
         pg.mixer.music.play(-1)
 
     def update(self):
