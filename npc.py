@@ -11,7 +11,6 @@ class NPC(SpriteObject):
         self.speed = 0.03
         self.size = 20
         self.health = 100
-        # Променени щети от 10 на 3
         self.attack_damage = 3
         self.attack_cooldown = 500
         self.last_attack_time = 0

@@ -7,19 +7,14 @@ class ObjectHandler:
         self.sprite_list = []
         self.npc_list = []
         self.npc_sprite_path = '../ray-casting-pygame/resources/sprites/npc/'
-        self.static_sprite_path = 'resources/sprites/static_sprites/'
-        self.anim_sprite_path = 'resources/sprites/animated_sprites/'
         self.npc_positions = {}
 
         # spawn npc
-        self.enemies = 20  # npc count
+        self.enemies = 20
         self.npc_types = [SoldierNPC]
         self.weights = [100]
         self.restricted_area = {(i, j) for i in range(10) for j in range(10)}
         self.spawn_npc()
-
-        # sprite map
-        # Всички декоративни спрайтове са премахнати по ваше желание.
 
     def spawn_npc(self):
         for i in range(self.enemies):
